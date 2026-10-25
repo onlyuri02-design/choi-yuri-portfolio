@@ -1,0 +1,40 @@
+.depth-site .focused-project.pnl-project{grid-template-columns:1fr}
+.pnl-project>.project-info{display:grid;grid-template-columns:1fr 1fr;gap:0 35px;align-items:start}
+.pnl-project>.project-info>.eyebrow,.pnl-project>.project-info>h3,.pnl-project>.project-info>h4{grid-column:1}
+.pnl-project>.project-info>.project-description{grid-column:1;margin-bottom:20px}
+.pnl-project>.project-info>.contribution{grid-column:2;grid-row:1/5;margin-top:0}
+.pnl-project>.project-info>.project-result{grid-column:1/-1;margin-top:0}
+.pnl-diagram{border:1px solid #bdbdbd;background:#fff;padding:32px;container-type:inline-size;container-name:pnl}
+.pnl-heading{display:grid;grid-template-columns:1fr 1fr;gap:12px 30px;align-items:end;margin-bottom:36px}
+.pnl-heading>span{grid-column:1/-1;font:400 12px/1.6 var(--font-body);letter-spacing:.12em;color:#666}
+.depth-site .pnl-heading h4{font:400 clamp(38px,4.2vw,62px)/1.03 var(--font-display);letter-spacing:-.04em}
+.pnl-heading p{font:400 16px/1.8 var(--font-body);color:#555;word-break:keep-all}
+.pnl-process{padding:0;margin:0;list-style:none;display:grid;grid-template-columns:1fr;border-top:1px solid #171717}
+.pnl-process>li{position:relative;padding:22px 0;display:flex;flex-direction:column;border-bottom:1px solid #ccc;min-width:0}
+.pnl-step-top{display:flex;justify-content:space-between;align-items:center;font:400 14px/1.5 var(--font-body);color:#666;margin-bottom:18px}
+.pnl-step-top .pnl-arrow{display:inline-block;transform:rotate(90deg);font-size:23px;color:#2456b8}
+.pnl-process h5{font:400 30px/1.12 var(--font-display);letter-spacing:-.025em;margin:0 0 10px}
+.pnl-process>li>b{font:500 14px/1.7 var(--font-body)}
+.pnl-process>li>p{font:400 16px/1.85 var(--font-body);color:#555;margin:14px 0 20px;word-break:keep-all}
+.pnl-equation{margin-top:auto;border-top:1px solid #d6d6d6;padding-top:14px;display:grid;gap:10px}
+.pnl-equation>span{font:400 14px/1.6 var(--font-body);color:#666}
+.pnl-equation>strong{font:500 14px/1.6 var(--font-body);color:#2456b8}
+.pnl-bep{background:#f4f4f3;padding:22px;margin-top:25px}
+.pnl-bep>span{font:400 12px/1.6 var(--font-body);letter-spacing:.1em;color:#666}
+.pnl-bep p{font:400 16px/1.8 var(--font-body);margin-top:9px;word-break:keep-all}
+.pnl-bep b{font-weight:500}
+.pnl-bep small{display:block;font:400 12px/1.8 var(--font-body);color:#666;margin-top:10px;letter-spacing:0}
+.pnl-decisions-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin:38px 0 18px}
+.pnl-decisions-heading h5{font:400 30px/1.15 var(--font-display);margin:0;letter-spacing:-.025em}
+.pnl-decisions-heading>span{font:400 12px/1.6 var(--font-body);color:#666;white-space:nowrap}
+.pnl-decisions{display:grid;grid-template-columns:1fr;border-top:1px solid #171717}
+.pnl-decisions article{display:flex;align-items:start;gap:16px;padding:22px 0;border-bottom:1px solid #ccc}
+.pnl-decision-number{font:400 12px/1.5 var(--font-body);color:#777;padding-top:6px}
+.pnl-decisions h6{font:400 26px/1.2 var(--font-display);margin:0 0 8px;letter-spacing:-.02em}
+.pnl-decisions b{font:500 14px/1.8 var(--font-body)}
+.pnl-decisions p{font:400 16px/1.85 var(--font-body);color:#555;margin:10px 0;word-break:keep-all}
+.pnl-decisions small{font:400 11px/1.7 var(--font-body);letter-spacing:.05em;color:#666}
+.pnl-notes{padding-top:22px;display:grid;gap:6px}
+.pnl-notes p{font:400 12px/1.8 var(--font-body);color:#777;word-break:keep-all}
+@container pnl (min-width:650px){.pnl-process{grid-template-columns:repeat(4,minmax(0,1fr))}.pnl-process>li{padding:22px 18px 24px}.pnl-process>li:first-child{padding-left:0}.pnl-process>li:last-child{padding-right:0}.pnl-process>li+li{border-left:1px solid #ccc}.pnl-step-top .pnl-arrow{transform:none}.pnl-decisions{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:30px}.pnl-process h5{font-size:28px}}
+@media(max-width:700px){.pnl-project>.project-info{display:block}.pnl-diagram{padding:22px 18px}.pnl-heading{grid-template-columns:1fr;gap:18px}.pnl-heading h4{font-size:42px}.pnl-decisions-heading{display:block}.pnl-decisions-heading>span{display:block;margin-top:10px}.pnl-bep{padding:18px}}

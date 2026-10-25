@@ -1,0 +1,16 @@
+/* Shared page-title hierarchy; only the hero and chapter colour treatment change. */
+.o-integrated>.f-page-heading{margin-bottom:48px}
+.o-integrated .o-hero{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,70px);max-width:1080px;margin-bottom:65px}
+.o-integrated .o-hero-crop{position:relative;overflow:hidden;width:100%;aspect-ratio:1147/807;background:#43a8da}
+.o-integrated .o-hero-crop img{position:absolute;width:106.2%;max-width:none;height:auto;left:-2.6%;top:-4.8%;filter:none!important}
+.o-integrated .o-hero h2{font:750 clamp(42px,5.2vw,76px)/1.04 var(--f-sans);letter-spacing:-.035em;margin:0}
+.o-integrated .o-hero p{font:400 14px/1.7 var(--f-sans);margin-top:18px}
+.o-integrated .o-index>section>header{background:#eee;color:#000;border-top:2px solid #000}
+.o-integrated .o-index>section>header>span,.o-integrated .o-index header>b{color:#087caf}
+.o-integrated .o-index>.is-active>header{background:#000;color:var(--f-yellow)}
+.o-integrated .o-index>.is-active>header>span,.o-integrated .o-index>.is-active>header>b{color:var(--f-yellow)}
+.o-integrated .o-submenu :is(button,a):hover{background:#eee;color:#000}
+.o-integrated .o-submenu :is(button,a)[aria-pressed=true],.o-integrated .o-submenu :is(button,a)[aria-pressed=true]:hover{background:var(--f-yellow);color:#000}
+.o-integrated .o-open{background:#eee;color:#000}
+.o-integrated .o-open:hover,.o-integrated .o-open:focus-visible{background:#000;color:var(--f-yellow)}
+@media(max-width:640px){.o-integrated>.f-page-heading{margin-bottom:35px}.o-integrated .o-hero{grid-template-columns:1fr;gap:26px;margin-bottom:45px}.o-integrated .o-hero-crop{max-width:330px}.o-integrated .o-hero h2{font-size:clamp(38px,10vw,52px)}.o-integrated .o-hero p{font-size:14px;margin-top:14px}}

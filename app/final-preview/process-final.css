@@ -1,0 +1,63 @@
+.o-integrated{--o-blue:#00799f;--o-ink:#080808;padding-bottom:70px}
+.o-integrated .o-hero{grid-template-columns:230px 1fr;gap:65px;margin:0 0 65px;align-items:center}
+.o-integrated .o-hero>img{width:230px;height:320px;object-fit:contain;filter:none}
+.o-integrated .o-hero h1{font-family:Helvetica,Arial,sans-serif;font-size:clamp(48px,5.4vw,76px);font-weight:750;line-height:1.04;margin:0}
+.o-integrated .o-hero p{margin:20px 0 0}
+.o-map-heading{display:flex;justify-content:space-between;align-items:center;gap:25px;margin-bottom:16px}
+.o-map-heading>span{font-size:12px;letter-spacing:.12em;font-weight:700}
+.o-map-heading>p{font-size:13px;color:#333}
+.o-integrated .o-index{gap:26px;padding-bottom:38px}
+.o-integrated .o-index>section>header{background:var(--f-blue);color:#000;border:0;min-height:134px;padding:20px 18px;gap:12px}
+.o-integrated .o-index>section>header>span{font-size:29px;color:inherit;line-height:1.2}
+.o-integrated .o-index header small{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;margin-bottom:9px}
+.o-integrated .o-index header h2{font-size:23px;color:inherit}
+.o-integrated .o-index header p{color:inherit;font-size:13px;margin-top:10px}
+.o-integrated .o-index header>b{color:inherit}
+.o-integrated .o-index>.is-active>header{background:#000;color:var(--f-yellow)}
+.o-integrated .o-submenu{margin:15px 0 0 18px;gap:0;border-left:1px solid #000}
+.o-integrated .o-submenu :is(button,a){min-height:52px;font:15px/1.4 Helvetica,Arial,'NanumSquare',sans-serif;color:#000;background:#fff;border-bottom:1px solid #d6d6d6;padding:12px 14px}
+.o-integrated .o-submenu :is(button,a) small{color:#333}
+.o-integrated .o-submenu :is(button,a):hover{background:var(--f-blue);color:#000}
+.o-integrated .o-submenu :is(button,a)[aria-pressed=true],.o-integrated .o-submenu :is(button,a)[aria-pressed=true]:hover{background:var(--f-yellow);color:#000}
+.o-integrated .o-submenu :is(button,a)[aria-pressed=true] small{color:#000}
+.o-integrated .o-empty{color:#333;padding:35px 0 0}
+.o-integrated .o-empty>span{font-weight:700;color:#000}
+.o-integrated .o-panel{scroll-margin-top:35px}
+.o-integrated .o-panel h2{font-family:Helvetica,Arial,sans-serif;font-weight:400;display:flex;gap:22px;align-items:baseline;font-size:34px}
+.o-integrated .o-panel h2>small{font-size:16px;color:#333}
+.o-integrated .o-panel h3{font-family:Helvetica,Arial,sans-serif}
+.o-integrated .o-close{border-bottom:1px solid #000;color:#000;min-height:44px;white-space:nowrap}
+.o-integrated .o-next button{color:#000;padding:12px 18px;border:1px solid #000;min-height:44px}
+.o-integrated .o-next button:last-child{background:#000;color:var(--f-yellow)}
+.o-integrated .o-open{color:#000}
+.o-integrated .o-proof .o-strategy-scope{margin-top:20px;font-size:12px;line-height:1.65;color:#666;font-weight:400}
+.o-integrated .o-open:hover{color:var(--f-yellow)}
+.v-pnl-gallery{max-width:570px;width:100%;justify-self:center}
+.v-gallery-heading{margin-bottom:22px}.v-gallery-heading p{font-size:14px;color:#333;margin-top:8px}
+.f-gallery.v-pnl-gallery figure>a{display:block;width:100%;height:clamp(360px,42vw,600px);max-height:none;aspect-ratio:auto;background:#fff;touch-action:pan-y}
+.f-gallery.v-pnl-gallery figure>a>img{width:100%;height:100%;max-height:none;object-fit:contain;filter:none!important}
+.v-pnl-gallery figcaption{min-height:42px;align-items:center;gap:20px}
+.v-gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-top:1px solid #000}
+.v-gallery-controls button{min-height:44px;padding:10px 18px;font:15px Helvetica,Arial,sans-serif;background:#000;color:var(--f-yellow);border:1px solid #000}
+.v-gallery-controls button:hover{background:var(--f-blue);color:#000}.v-gallery-controls>span{font:13px Helvetica,Arial,sans-serif}
+.v-pnl-gallery .f-thumbnails{display:flex;justify-content:center;gap:15px;margin-top:8px}
+.v-pnl-gallery .f-thumbnails button{width:70px;height:90px;background:#fff;border:1px solid #999;padding:5px}
+.v-pnl-gallery .f-thumbnails button[aria-pressed=true]{outline:3px solid #000;border-color:var(--f-yellow);background:var(--f-yellow)}
+.v-pnl-gallery .f-thumbnails img{width:100%;height:100%;object-fit:contain;filter:none!important}
+.v-pnl-gallery button:focus-visible{outline:3px solid #00799f;outline-offset:4px}
+.f-gallery.v-strategy-monochrome img{filter:grayscale(1)!important}
+.v-interior .f-business-ownership .f-description{white-space:pre-line;font-size:15px;line-height:1.75}
+.f-business-ownership .f-contribution{margin-top:28px;padding-top:22px}
+.v-interior .f-business-ownership .f-contribution li{font-size:15px;line-height:1.65;padding:0;margin-bottom:14px}
+.f-business-ownership .f-contribution li:last-child{margin-bottom:0}
+.f-business-ownership .f-contribution li strong{display:block;font-weight:700;margin-bottom:2px}
+.f-business-ownership .f-contribution li>span{display:block;white-space:pre-line;font-weight:400}
+.f-business-ownership .f-result{margin-top:28px}
+.f-business-ownership .f-result>p{font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.f-business-ownership .f-result>p.f-result-detail{font-size:12px;font-weight:400;line-height:1.65;color:#666;margin-top:8px}
+.o-proof>img[src="/portfolio/revision-v4/strategy-1.png"]{filter:grayscale(1)!important}
+@media(max-width:1000px){.o-integrated .o-index{gap:18px}.o-integrated .o-index>section>header{min-height:158px;padding:18px 13px}.o-integrated .o-index header h2{font-size:21px}.o-integrated .o-submenu{margin-left:8px}.o-integrated .o-submenu :is(button,a){font-size:14px;padding:12px 10px}}
+@media(max-width:640px){.o-integrated .o-hero{grid-template-columns:100px minmax(0,1fr);gap:25px;margin-bottom:40px}.o-integrated .o-hero>img{width:100px;height:150px}.o-integrated .o-hero h1{font-size:clamp(35px,9vw,48px)}.o-integrated .o-hero p{font-size:13px}.o-integrated .o-eyebrow{font-size:10px;margin-bottom:10px}.o-map-heading{display:block}.o-map-heading>p{font-size:12px;margin-top:8px}.o-integrated .o-index{gap:25px}.o-integrated .o-index>section>header{min-height:0;padding:18px}.o-integrated .o-index header h2{font-size:24px}.o-integrated .o-submenu{margin-left:25px;margin-top:8px}.o-integrated .o-submenu :is(button,a){font-size:15px}.o-integrated .o-panel h2{font-size:27px;gap:12px}.o-integrated .o-panel h2>small{font-size:13px}.o-integrated .o-panel>header>div{align-items:flex-start;gap:15px}.o-integrated .o-open{font-size:18px!important}.o-integrated .o-next{gap:12px}.o-integrated .o-team{gap:12px}}
+.o-global-proof{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:48px}
+.o-global-proof>img{display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:800px){.o-global-proof{grid-template-columns:minmax(0,1fr);gap:28px}}

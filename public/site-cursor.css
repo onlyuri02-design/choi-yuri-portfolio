@@ -1,0 +1,27 @@
+/* Shared by the React pages and the standalone Notes document. */
+#site-cursor {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2147483647;
+  visibility: hidden;
+  will-change: transform;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  #site-cursor { display: block; }
+  html.site-cursor-active,
+  html.site-cursor-active * {
+    cursor: none !important;
+  }
+  html.site-cursor-active #site-cursor { visibility: visible; }
+}

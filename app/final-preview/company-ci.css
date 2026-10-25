@@ -1,0 +1,4 @@
+/* Shared optical size in Work and Career; keep the original artwork's proportions. */
+.company-ci{display:block;width:auto;height:18px;max-width:none;object-fit:contain;flex-shrink:0}
+.company-ci-hugel{height:15.5px}
+.v-work .v-featured-final .v-case-heading .company-ci{filter:none;transition:none}

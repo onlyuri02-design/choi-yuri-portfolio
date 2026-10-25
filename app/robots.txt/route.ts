@@ -1,0 +1,1 @@
+export function GET(){return new Response('User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /analytics\nDisallow: /builder\nDisallow: /compare\nDisallow: /final-preview\nDisallow: /process-options\nSitemap: https://yurichoi.com/sitemap.xml\n',{headers:{'Content-Type':'text/plain; charset=utf-8'}});}

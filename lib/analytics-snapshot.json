@@ -1,0 +1,165 @@
+{
+  "surface": "dashboard",
+  "title": "포트폴리오 방문 통계",
+  "id": "dashboard:d8155575-beaf-4618-bfaf-ab4d2dafed91",
+  "generatedAt": "2026-10-11T06:46:58.954Z",
+  "status": "live",
+  "buildStatus": "complete",
+  "filters": [],
+  "queries": {
+    "traffic_channels": {"rows": [], "source": {"label":"유입 경로","tables":["traffic_activity"],"description":"선택 기간에 기록이 있는 세션을 중복 제거하고 각 세션의 첫 기록 channel로 집계. null은 수집 전. 직접·출처 미상은 실제 직접 접속을 확정하지 않습니다.","evidenceFlow":[{"title":"소유자 전용 API","detail":"GET /api/analytics?day=YYYY-MM-DD&days=1|7|30 → channels. 한국시간, 30일 보관."}]}},
+    "traffic_pages": {"rows": [], "source": {"label":"페이지 조회수","tables":["traffic_activity"],"description":"선택 기간 상세 이벤트의 page별 COUNT(*). 수집 이전 조회는 포함하지 않습니다.","evidenceFlow":[{"title":"소유자 전용 API","detail":"GET /api/analytics?day=YYYY-MM-DD&days=1|7|30 → pages. 인기 페이지는 조회수 내림차순 상위 12개."}]}},
+    "traffic_clicks": {"rows": [], "source": {"label":"버튼 클릭","tables":["traffic_clicks"],"description":"선택 기간 허용된 버튼 action·page별 클릭 횟수. CV·문의·이동 버튼만 수집하며 전환 성공이 아닙니다. 새 기능 이후부터 수집.","evidenceFlow":[{"title":"소유자 전용 API","detail":"GET /api/analytics?day=YYYY-MM-DD&days=1|7|30 → clicks. 한국시간, 30일 보관."}]}},
+    "traffic_trend": {"rows": [], "source": {"label":"상세 방문 추세","tables":["traffic_activity"],"description":"선택 기간 일별 COUNT(*), COUNT(DISTINCT visitor), COUNT(DISTINCT session). 날짜 간 중복 방문자·세션을 합산하지 않습니다. 수집된 날짜만 표시.","evidenceFlow":[{"title":"소유자 전용 API","detail":"GET /api/analytics?day=YYYY-MM-DD&days=1|7|30 → trend. 한국시간, 30일 보관."}]}},
+    "traffic_daily": {
+      "rows": [],
+      "source": {
+        "label": "yurichoi.com · traffic_daily",
+        "tables": [
+          "traffic_daily"
+        ],
+        "description": "일별 방문 추정치와 조회 합계. 한국시간 기준, 날짜 간 방문자를 합산하지 않습니다.",
+        "filters": [
+          "한국 시간 기준",
+          "상세 기록 보관: 최근 30일"
+        ],
+        "caveats": [
+          "수치는 소유자 인증 후 동일 사이트 API에서 읽습니다. 이 파일에는 방문 데이터가 들어 있지 않습니다.",
+          "IP와 브라우저 정보의 변환값은 실제 사람을 확정하는 식별자가 아닙니다.",
+          "기기·지역 정보가 없거나 추적이 차단된 방문은 누락되거나 확인 불가로 표시됩니다."
+        ],
+        "evidenceFlow": [
+          {
+            "title": "실시간 원본",
+            "detail": "GET /api/analytics?day=YYYY-MM-DD · 소유자 인증 · 15초 갱신"
+          }
+        ]
+      }
+    },
+    "traffic_activity": {
+      "rows": [],
+      "source": {
+        "label": "yurichoi.com · traffic_activity",
+        "tables": [
+          "traffic_activity"
+        ],
+        "description": "선택 기간의 상세 페이지 열람 기록. 최근 500건까지 표시하며 서버는 30일을 보관합니다. 브라우저 ID 선택은 표시된 500건 내의 필터입니다.",
+        "filters": [
+          "한국 시간 기준",
+          "상세 기록 보관: 최근 30일"
+        ],
+        "caveats": [
+          "수치는 소유자 인증 후 동일 사이트 API에서 읽습니다. 이 파일에는 방문 데이터가 들어 있지 않습니다.",
+          "IP와 브라우저 정보의 변환값은 실제 사람을 확정하는 식별자가 아닙니다.",
+          "기기·지역 정보가 없거나 추적이 차단된 방문은 누락되거나 확인 불가로 표시됩니다."
+        ],
+        "evidenceFlow": [
+          {
+            "title": "실시간 원본",
+            "detail": "GET /api/analytics?day=YYYY-MM-DD · 소유자 인증 · 15초 갱신"
+          }
+        ]
+      }
+    },
+    "activity_summary": {
+      "rows": [],
+      "source": {
+        "label": "yurichoi.com · traffic_activity",
+        "tables": [
+          "traffic_activity"
+        ],
+        "description": "상세 수집 이후의 페이지 열람·추정 방문자·30분 비활동 기준 세션 수.",
+        "filters": [
+          "한국 시간 기준",
+          "상세 기록 보관: 최근 30일"
+        ],
+        "caveats": [
+          "수치는 소유자 인증 후 동일 사이트 API에서 읽습니다. 이 파일에는 방문 데이터가 들어 있지 않습니다.",
+          "IP와 브라우저 정보의 변환값은 실제 사람을 확정하는 식별자가 아닙니다.",
+          "기기·지역 정보가 없거나 추적이 차단된 방문은 누락되거나 확인 불가로 표시됩니다."
+        ],
+        "evidenceFlow": [
+          {
+            "title": "실시간 원본",
+            "detail": "GET /api/analytics?day=YYYY-MM-DD · 소유자 인증 · 15초 갱신"
+          }
+        ]
+      }
+    },
+    "live_presence": {
+      "rows": [],
+      "source": {
+        "label": "yurichoi.com · traffic_presence",
+        "tables": [
+          "traffic_presence"
+        ],
+        "description": "현재 기준 최근 5분간 활동한 IP·브라우저 조합의 추정 수.",
+        "filters": [
+          "한국 시간 기준",
+          "상세 기록 보관: 최근 30일"
+        ],
+        "caveats": [
+          "수치는 소유자 인증 후 동일 사이트 API에서 읽습니다. 이 파일에는 방문 데이터가 들어 있지 않습니다.",
+          "IP와 브라우저 정보의 변환값은 실제 사람을 확정하는 식별자가 아닙니다.",
+          "기기·지역 정보가 없거나 추적이 차단된 방문은 누락되거나 확인 불가로 표시됩니다."
+        ],
+        "evidenceFlow": [
+          {
+            "title": "실시간 원본",
+            "detail": "GET /api/analytics?day=YYYY-MM-DD · 소유자 인증 · 15초 갱신"
+          }
+        ]
+      }
+    },
+    "traffic_regions_daily": {
+      "rows": [],
+      "source": {
+        "label": "yurichoi.com · traffic_activity 지역 집계",
+        "tables": [
+          "traffic_activity"
+        ],
+        "description": "traffic_activity에서 선택 기간의 세션별 첫 기록을 골라 국가·지역·도시별 방문 횟수로 집계. 세션당 1개 지역. 도시 미제공은 Unknown.",
+        "filters": [
+          "한국 시간 기준",
+          "상세 기록 보관: 최근 30일"
+        ],
+        "caveats": [
+          "수치는 소유자 인증 후 동일 사이트 API에서 읽습니다. 이 파일에는 방문 데이터가 들어 있지 않습니다.",
+          "IP와 브라우저 정보의 변환값은 실제 사람을 확정하는 식별자가 아닙니다.",
+          "기기·지역 정보가 없거나 추적이 차단된 방문은 누락되거나 확인 불가로 표시됩니다."
+        ],
+        "evidenceFlow": [
+          {
+            "title": "실시간 원본",
+            "detail": "GET /api/analytics?day=YYYY-MM-DD · 소유자 인증 · 15초 갱신"
+          }
+        ]
+      }
+    },
+    "traffic_devices": {
+      "rows": [],
+      "source": {
+        "label": "yurichoi.com · traffic_activity",
+        "tables": [
+          "traffic_activity"
+        ],
+        "description": "traffic_activity에서 선택 기간의 세션별 첫 기록을 골라 기기 유형별 방문 횟수로 집계. 세션당 1개 기기.",
+        "filters": [
+          "한국 시간 기준",
+          "상세 기록 보관: 최근 30일"
+        ],
+        "caveats": [
+          "수치는 소유자 인증 후 동일 사이트 API에서 읽습니다. 이 파일에는 방문 데이터가 들어 있지 않습니다.",
+          "IP와 브라우저 정보의 변환값은 실제 사람을 확정하는 식별자가 아닙니다.",
+          "기기·지역 정보가 없거나 추적이 차단된 방문은 누락되거나 확인 불가로 표시됩니다."
+        ],
+        "evidenceFlow": [
+          {
+            "title": "실시간 원본",
+            "detail": "GET /api/analytics?day=YYYY-MM-DD · 소유자 인증 · 15초 갱신"
+          }
+        ]
+      }
+    }
+  }
+}

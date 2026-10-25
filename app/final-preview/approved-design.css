@@ -1,0 +1,23 @@
+/* Approved mockup: preserve the image/slogan pairing and lower content. */
+.o-integrated .o-hero{grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:30px;max-width:none;margin-bottom:65px;align-items:center}
+.o-integrated .o-hero-crop{aspect-ratio:1.57;max-width:none}
+.o-integrated .o-hero-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.o-integrated .o-hero h1{font:750 clamp(30px,3.6vw,50px)/1.08 var(--f-sans);letter-spacing:-.035em;background:var(--f-yellow);padding:0 .08em .04em;margin:0 0 28px;max-width:100%}
+.o-integrated .o-hero h2{font:750 clamp(44px,6.25vw,84px)/1.04 var(--f-sans);letter-spacing:-.035em;margin:0}
+.o-integrated .o-index>section>header{min-height:104px;padding:14px 16px;gap:16px}
+.o-integrated .o-index>section>header>span{font:600 48px/1 var(--f-serif);color:var(--f-blue)}
+.o-integrated .o-index header>b{color:var(--f-blue)}
+.o-integrated .o-index header small{margin-bottom:5px}
+.o-integrated .o-index header p{margin-top:5px}
+.o-integrated .o-index>.is-active>header,.o-integrated .o-index>section:focus-within>header{background:#000;color:var(--f-yellow)}
+.o-integrated .o-index>.is-active>header *,.o-integrated .o-index>section:focus-within>header *{color:var(--f-yellow)}
+.o-integrated .o-submenu :is(button,a):is(:hover,:focus-visible){background:#000;color:var(--f-yellow)}
+.o-integrated .o-submenu :is(button,a):is(:hover,:focus-visible) small{color:inherit}
+.o-integrated .o-submenu :is(button,a)[aria-pressed=true]{background:var(--f-yellow);color:#000}
+.o-integrated .o-submenu :is(button,a)[aria-pressed=true] small{color:inherit}
+.o-integrated .o-submenu :is(button,a)[aria-pressed=true]:is(:hover,:focus-visible){background:#000;color:var(--f-yellow)}
+.o-integrated .o-open:is(:hover,:focus-visible){background:#000;color:var(--f-yellow)}
+.f-header nav a[aria-current=page]{color:var(--f-yellow)}
+@media(hover:hover){.o-integrated .o-index>section:hover>header{background:#000;color:var(--f-yellow)}.o-integrated .o-index>section:hover>header *{color:var(--f-yellow)}}
+@media(max-width:1000px){.o-integrated .o-hero{gap:24px}.o-integrated .o-index>section>header{gap:10px;padding:14px 10px;min-height:126px}.o-integrated .o-index>section>header>span{font-size:36px}}
+@media(max-width:640px){.o-integrated .o-hero{grid-template-columns:1fr;gap:26px;margin-bottom:45px}.o-integrated .o-hero h1{font-size:32px;margin-bottom:22px}.o-integrated .o-hero h2{font-size:clamp(42px,11vw,62px)}.o-integrated .o-index>section>header{min-height:0;padding:16px}.o-integrated .o-index>section>header>span{font-size:44px}}

@@ -1,0 +1,26 @@
+/* CV contact controls and editorial image overlay. */
+.f-cv .cv-final-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:48px;align-items:stretch}
+.f-cv .cv-final-copy{min-width:0;display:flex;flex-direction:column}
+.f-cv .cv-final-copy>.f-page-heading{margin:0 0 24px}
+.f-cv .cv-final-copy>.revision-cv-intro{margin:auto 0 0}
+.f-cv .cv-final-copy>.revision-cv-form{margin:20px 0 0;width:100%}
+.f-cv .cv-final-copy>.f-note{margin:0;font-size:13px;line-height:1.65}
+.f-cv .cv-final-links{gap:26px;margin-bottom:24px}
+.f-cv .cv-contact-fallback{margin-top:10px}
+.f-cv .cv-contact-fallback>button{display:inline-flex;align-items:center;justify-content:center;background:#000;color:#fff;border:1px solid #000;min-height:36px;padding:6px 13px;font:400 13px/1.4 var(--f-sans)}
+.f-cv .cv-contact-fallback>button:is(:hover,:focus-visible){background:#000;color:var(--f-yellow)}
+.f-cv .cv-copy-status{min-height:0;margin:0 0 10px;font-size:13px;line-height:1.6}
+.f-cv .cv-copy-status:empty{margin:0}
+.f-cv .cv-contact-help{max-width:none;margin:0;font-size:13px;line-height:1.8;color:#4b5358;word-break:keep-all}
+.f-cv .cv-final-visual{position:relative;margin:0;width:100%;max-width:none;isolation:isolate}
+.f-cv .cv-final-visual>div{aspect-ratio:1.215;overflow:hidden}
+.f-cv .cv-final-visual img{width:100%;height:auto;display:block}
+/* Trim only the worn outer border; preserve the original poster asset. */
+.f-cv .cv-poster-visual>div{position:relative;aspect-ratio:1400/1056;overflow:hidden}
+.f-cv .cv-poster-visual img{position:absolute;width:103.428572%;max-width:none;height:auto;left:-1.714286%;top:-1.515152%}
+.f-cv .cv-poster-visual::after{display:none}
+.f-cv .cv-final-visual::after{content:'';position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.65));pointer-events:none}
+.f-cv .cv-final-visual figcaption{position:absolute;z-index:1;left:30px;right:24px;bottom:28px;margin:0;color:#fff;font:400 clamp(32px,3.5vw,52px)/1.08 var(--f-serif);letter-spacing:-.025em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+@media(max-width:1200px){.f-cv .cv-final-grid{grid-template-columns:minmax(0,1fr);gap:30px}.f-cv .cv-final-copy>.revision-cv-intro{margin-top:0}}
+@media(max-width:900px){.f-cv .cv-final-visual figcaption{left:22px;right:20px;bottom:22px;font-size:clamp(30px,4vw,38px)}}
+@media(max-width:640px){.f-cv .cv-final-grid{grid-template-columns:minmax(0,1fr);gap:30px}.f-cv .cv-final-copy>.revision-cv-intro{margin-top:0}.f-cv .cv-final-visual figcaption{font-size:clamp(30px,8vw,44px)}.f-cv .cv-contact-fallback>button{min-height:40px}}

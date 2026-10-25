@@ -1,0 +1,12 @@
+/* Work only: quiet grey at rest, cover's black and lime on interaction. */
+.v-work .v-featured-grid>a{border-top:0;padding-top:0}
+.v-case-bubble{--bubble:#eee;position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;min-height:148px;padding:26px 24px;margin-bottom:20px;background:var(--bubble);border:1px solid #000;border-radius:10px;color:#000;transition:background-color .18s ease,color .18s ease;box-sizing:border-box}
+.v-case-bubble::before,.v-case-bubble::after{content:"";position:absolute;left:26px;bottom:-15px;width:24px;height:15px;clip-path:polygon(0 0,100% 0,0 100%);background:#000}
+.v-case-bubble::after{left:27px;bottom:-13px;width:21px;height:14px;background:var(--bubble);transition:background-color .18s ease}
+.v-work .v-case-bubble>h3{margin:0;font-size:clamp(24px,2.1vw,34px);line-height:1.1;overflow-wrap:normal;color:inherit}
+.v-case-bubble>span{font:400 28px/1 var(--f-sans);flex-shrink:0}
+.v-work .v-featured-grid>a:focus-visible{outline:2px solid #087caf;outline-offset:7px}
+.v-work .v-featured-grid>a:focus-visible .v-case-bubble,.v-work .v-featured-grid>a:active .v-case-bubble{--bubble:#000;color:var(--f-yellow)}
+@media(hover:hover){.v-work .v-featured-grid>a:hover .v-case-bubble{--bubble:#000;color:var(--f-yellow)}}
+@media(max-width:700px){.v-case-bubble{min-height:120px;padding:24px}.v-case-bubble>h3{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.v-case-bubble,.v-case-bubble::after{transition:none}}

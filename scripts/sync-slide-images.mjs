@@ -1,0 +1,22 @@
+import fs from 'node:fs/promises';
+import crypto from 'node:crypto';
+const root=new URL('../',import.meta.url);
+const assets=JSON.parse(await fs.readFile(new URL(process.argv[2]||'work/slides-current-assets.json',root),'utf8'));
+const dir=new URL('public/portfolio/',root);
+const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+const known=new Map();
+for(const file of await fs.readdir(dir))if(/\.(png|jpe?g|webp)$/i.test(file))known.set(hash(await fs.readFile(new URL(file,dir))),file);
+const results=[];let cursor=0;
+await Promise.all(Array.from({length:4},async()=>{while(cursor<assets.length){const a=assets[cursor++];
+  const response=await fetch(a.url,{signal:AbortSignal.timeout(60000)});
+  if(!response.ok)throw new Error(`Slide ${a.slide}: HTTP ${response.status}`);
+  const bytes=Buffer.from(await response.arrayBuffer());
+  const ext=bytes[0]===137&&bytes[1]===80?'png':bytes[0]===255&&bytes[1]===216?'jpg':null;
+  if(!ext)throw new Error(`Unsupported image on slide ${a.slide}`);
+  const sha256=hash(bytes);let file=known.get(sha256);const added=!file;
+  if(!file){file=`archive-20260911-${a.objectId}.${ext}`;await fs.writeFile(new URL(file,dir),bytes);known.set(sha256,file)}
+  const {url,...record}=a;results.push({...record,file,sha256,added});
+}}));
+results.sort((a,b)=>a.slide-b.slide);
+await fs.writeFile(new URL(process.argv[3]||'work/current-image-manifest.json',root),JSON.stringify(results,null,2));
+console.log(JSON.stringify({checked:results.length,added:results.filter(x=>x.added).map(({slide,title,file})=>({slide,title,file}))},null,2));

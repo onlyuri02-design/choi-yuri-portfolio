@@ -1,0 +1,49 @@
+{
+  "checked_on": "2026-10-01",
+  "status": "prepared_not_published",
+  "design_and_content": "Approved layout, copy, images, widths and responsive rules preserved.",
+  "verification": {
+    "typescript": "passed",
+    "production_build": "passed",
+    "release_tests": { "passed": 21, "failed": 0 },
+    "browser": {
+      "environment": "local development preview",
+      "routes_at_both_widths": 52,
+      "widths": [1408, 390],
+      "additional_linked_routes_desktop": 12,
+      "unique_images_loaded": 163,
+      "broken_images": 0,
+      "horizontal_overflow": 0,
+      "javascript_errors": 0,
+      "navigation_checked": "Work -> MADECA MD case -> AI workflow -> Decisions tab",
+      "external_article_availability": "not rechecked"
+    },
+    "public_output": "Checked for private PDFs, local env files, private configuration keys, source maps and temporary work directories; none found.",
+    "production_worker_smoke_test": "Blocked by local filesystem access denial while Wrangler resolves the compiled entry; not claimed as passed."
+  },
+  "release_commands": [
+    "pnpm run check:release"
+  ],
+  "individual_commands": [
+    "pnpm run typecheck",
+    "pnpm run build",
+    "pnpm test"
+  ],
+  "maintenance": {
+    "worker_types": "Checked-in Cloudflare runtime declarations; after changing compatibility configuration, build and run pnpm run types:worker.",
+    "legacy_tests": "Historical design/fixture tests retained outside the default release suite. They describe superseded designs or depend on ignored local fixtures; running every tests/*.test.mjs is not a passing release gate.",
+    "legacy_routes": "In production, /builder, /compare, /process-options and /final-preview redirect to /. Local draft access and all source files are retained.",
+    "package_manager": "Existing pnpm lockfile and dependency versions preserved. This host's bundled pnpm.cmd wrapper has an invalid runtime path; checks were run using the installed Node CLIs directly."
+  },
+  "remaining_before_publication": [
+    "Resolve the previously recorded Sites source-save permission denial for .git/index.lock. No new source push or public deployment was performed in this preparation pass.",
+    "Keep CV download disabled until its final PDF is reconciled, uploaded to private production R2, and CV_FILE_KEY is configured. Do not put the CV in public assets. See CV-DOWNLOAD-SETUP.md for the existing activation checklist.",
+    "Publish through the existing Sites workflow and verify a successful deployment status."
+  ],
+  "hosting": {
+    "project_id": "appgprj_6a683cafc11081919b0cc286cb4d5a4f",
+    "audience": "public, unchanged",
+    "latest_published_version_observed": 60,
+    "new_deployment_performed": false
+  }
+}

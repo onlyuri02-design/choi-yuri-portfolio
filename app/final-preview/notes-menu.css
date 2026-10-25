@@ -1,0 +1,9 @@
+.final-site .f-cover-menu>a.f-notes-link,
+.final-site .f-header nav>a.f-notes-link{background:var(--f-yellow);color:#000}
+.final-site .f-cover-menu>a.f-notes-link:hover,
+.final-site .f-header nav>a.f-notes-link:hover{background:#000;color:var(--f-yellow)}
+@media(min-width:1001px){
+ .final-site .f-cover-menu>a,.final-site .f-cover-menu>div>a{
+  height:1.9989511vw;min-height:0;box-sizing:border-box;display:flex;align-items:center;padding-top:0;padding-bottom:0;
+ }
+}
